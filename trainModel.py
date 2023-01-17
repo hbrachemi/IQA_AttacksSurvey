@@ -17,8 +17,8 @@ def train_model(model, dataloaders,criterion, optimizer, num_epochs=25, is_incep
             running_loss = 0.0             
 
             for i ,[inputs, labels] in enumerate(tqdm(dataloaders[phase])):
-                inputs = inputs.to(device)
-                labels = labels.to(device)
+                inputs = inputs.to(device).float()
+                labels = labels.to(device).float()
 
                 optimizer.zero_grad()
 

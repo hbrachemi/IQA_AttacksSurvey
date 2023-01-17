@@ -40,24 +40,17 @@ def evaluate(val_dl, metric, transf, noise_list ,image_distance_metric):
   
   for i ,[inputs, labels] in enumerate(tqdm(val_dl)):
                 inputs = inputs.to(device)
-<<<<<<< HEAD
-=======
                 init_inputs = torch.clone(inputs)
->>>>>>> ebdce8ef1760308e9bdb928ac6c8b25b8f2f9a93
                 mos.append(float(labels.cpu().detach()))
-                if noise_list is None:
+                if noise_list is not None:
                    noise = noise_list[i]
                    inputs = inputs + noise
                 if transf is not None:
                    inputs = transf(inputs)
                 y_adv.append(float(metric(inputs).cpu().detach()))
                 if image_distance_metric is not None:
-<<<<<<< HEAD
-                   fr.append(image_distance_metric(inputs,inputs))
-=======
                    fr.append(image_distance_metric(inputs,init_inputs))
->>>>>>> ebdce8ef1760308e9bdb928ac6c8b25b8f2f9a93
   [SRCC, KRCC, PLCC, RMSE]=compute_metrics(mos,y_adv)
   
-  return SRCC,KRCC,PLCC,RMSE,fr         
+  return SRCC,KRCC,PLCC,RMSE,fr,mos         
   
