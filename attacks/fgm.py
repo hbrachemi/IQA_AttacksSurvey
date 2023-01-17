@@ -14,7 +14,7 @@ def fast_gradient_method(
     clip_max=None,
     y=None,
     targeted=False,
-    sanity_checks=False,
+    sanity_checks=False, loss_fn=torch.nn.MSELoss()
 ):
     """
     PyTorch implementation of the Fast Gradient Method.
@@ -76,8 +76,7 @@ def fast_gradient_method(
         # Using model predictions as ground truth to avoid label leaking
         y = torch.tensor(1).float()
 
-    # Compute loss
-    loss_fn = torch.nn.MSELoss() #torch.nn.L1Loss() 
+    # Compute loss 
     loss = loss_fn(model_fn(x), y)
 
     # If attack is targeted, minimize loss of target label rather than maximize loss of correct label
