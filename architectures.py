@@ -97,7 +97,7 @@ def initialize_model(model_name, feature_extract, use_pretrained=True):
     return model_ft
     
 def FC(model,fc_layers,hidden_units,dropOutRate,name):
-    if name == 'vgg16' or 'vgg19' or 'vgg11':
+    if name in ['vgg16','vgg19','vgg11']:
         num_ftrs = 512
         x=[torch.nn.Linear(num_ftrs,hidden_units)]
         for i in range(fc_layers):
@@ -108,7 +108,7 @@ def FC(model,fc_layers,hidden_units,dropOutRate,name):
         x.append(torch.nn.ReLU(inplace=False))
         Fc=torch.nn.Sequential(*x)
         model.classifier=Fc    	
-    elif (name=='resnet'):
+    elif name =='resnet':
         num_ftrs = model.fc.in_features
         x=[torch.nn.Linear(num_ftrs,hidden_units)]
         for i in range(fc_layers):
