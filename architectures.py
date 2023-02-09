@@ -141,7 +141,9 @@ def FC(model,fc_layers,hidden_units,dropOutRate,name):
     if name in ['vgg16','vgg19','vgg11']:
         num_ftrs = 512
         x=[torch.nn.Linear(num_ftrs,hidden_units)]
-        for i in range(fc_layers):
+        x.append(torch.nn.ReLU(inplace=False))
+        x.append(torch.nn.Dropout(dropOutRate,inplace=False))
+        for i in range(fc_layers-1):
             x.append(torch.nn.Linear(hidden_units,hidden_units,bias=True))
             x.append(torch.nn.ReLU(inplace=False))
             x.append(torch.nn.Dropout(dropOutRate,inplace=False))
@@ -152,7 +154,9 @@ def FC(model,fc_layers,hidden_units,dropOutRate,name):
     elif name in ['resnet','inception']:
         num_ftrs = 2048
         x=[torch.nn.Linear(num_ftrs,hidden_units)]
-        for i in range(fc_layers):
+        x.append(torch.nn.ReLU(inplace=False))
+        x.append(torch.nn.Dropout(dropOutRate,inplace=False))
+        for i in range(fc_layers-1):
             x.append(torch.nn.Linear(hidden_units,hidden_units,bias=True))
             x.append(torch.nn.ReLU(inplace=False))
             x.append(torch.nn.Dropout(dropOutRate,inplace=False))
@@ -163,7 +167,9 @@ def FC(model,fc_layers,hidden_units,dropOutRate,name):
     else:
         num_ftrs = model.classifier[0].in_features
         x=[torch.nn.Linear(num_ftrs,hidden_units)]
-        for i in range(fc_layers):
+        x.append(torch.nn.ReLU(inplace=False))
+        x.append(torch.nn.Dropout(dropOutRate,inplace=False))
+        for i in range(fc_layers-1):
             x.append(torch.nn.Linear(hidden_units,hidden_units,bias=True))
             x.append(torch.nn.ReLU(inplace=False))
             x.append(torch.nn.Dropout(dropOutRate,inplace=False))
