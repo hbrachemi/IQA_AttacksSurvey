@@ -23,3 +23,5 @@ attacks is essential for improving the reliability and accuracy of
 DL-based IQA models.
 ## General Attack Outline
 ![](https://github.com/hbrachemi/IQA_AttacksSurvey/blob/master/schema.png)
+## Examples
+![](https://github.com/hbrachemi/IQA_AttacksSurvey/blob/master/examples.png)
