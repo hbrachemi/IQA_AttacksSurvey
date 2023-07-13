@@ -34,4 +34,21 @@ DL-based IQA models.
 ## Examples
 ![](https://github.com/hbrachemi/IQA_AttacksSurvey/blob/master/examples.png)
 ## Usage
-[AttacksGenerationOnDataset.ipynb](![](https://github.com/hbrachemi/IQA_AttacksSurvey/blob/master/AttacksGenerationOnDataset.ipynb) provides a guideline on how to launch the attack on a dataset.
+[AttacksGenerationOnDataset.ipynb](https://github.com/hbrachemi/IQA_AttacksSurvey/blob/master/AttacksGenerationOnDataset.ipynb) provides a guideline on how to launch the attack on a dataset.
+
+1. Set the path to the target dataset's repository
+```db = "../Databases/tid2013/"```
+2. Define the maximum scale of the ground truth quality score:
+```scale = int(input())```
+3. Define the victim model and load its weights
+```model = initialize_model('inception',False,True)```
+ ```  weights_path = '../pretrained/iqaModel_tid_inception.pth'```
+4. Define the parametters of the attack
+```iterations = [10]```
+```epsilons = [0.001,0.01,0.1]```
+```attacks = ["bim","pgd","fgm"]```
+```losses = ['mse(y_tielda,y)']```
+ ## Contact
+Hanene F.Z Brachemi Meftah , `hanene.brachemi@insa-rennes.fr`
+
+   
