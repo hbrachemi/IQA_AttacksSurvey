@@ -21,4 +21,5 @@ correlation scores when subjected to adversarial perturbations.
 Consequently, the development of countermeasures against such
 attacks is essential for improving the reliability and accuracy of
 DL-based IQA models.
+## General Attack Outline
 ![](https://github.com/hbrachemi/IQA_AttacksSurvey/blob/master/schema.png)
