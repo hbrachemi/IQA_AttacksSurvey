@@ -1,7 +1,4 @@
 # IQA_AttacksSurvey
-# Contents
-1. [Abstract](#Abstract)
-2. [Contact](#Contact)
 
 ## Abstract
 The rapid development of Deep Learning (DL) and,
@@ -24,4 +21,4 @@ correlation scores when subjected to adversarial perturbations.
 Consequently, the development of countermeasures against such
 attacks is essential for improving the reliability and accuracy of
 DL-based IQA models.
-![](https://github.com/hbrachemi/IQA_AttacksSurvey/blob/master/schema_v2.drawio-2.pdf)
+![](https://github.com/hbrachemi/IQA_AttacksSurvey/blob/master/schema.png)
