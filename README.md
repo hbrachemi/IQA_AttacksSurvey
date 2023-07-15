@@ -5,7 +5,8 @@
 2. [General Attack Outline](#General-Attack-Outline)
 3. [Examples](#Examples) 
 4. [Usage](#Usage)
-5. [Contact](#Contact)
+5. [Acknowledgements](#Acknowledgements)
+6. [Contact](#Contact)
 
 
 ## Abstract
@@ -48,6 +49,9 @@ DL-based IQA models.
 ```epsilons = [0.001,0.01,0.1]```
 ```attacks = ["bim","pgd","fgm"]```
 ```losses = ['mse(y_tielda,y)']```
+ ## Acknowledgements
+ This project is funded by both Région Bretagne (Brittany region), France, and Direction Générale de l’Armement (DGA).
+ We also used the code provided by the CleverHans software library to which we added further modifications in order to adapt it to the context of our study.
  ## Contact
 Hanene F.Z Brachemi Meftah , `hanene.brachemi@insa-rennes.fr`
 
