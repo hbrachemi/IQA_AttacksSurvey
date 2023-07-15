@@ -51,7 +51,7 @@ DL-based IQA models.
 ```losses = ['mse(y_tielda,y)']```
  ## Acknowledgements
  This project is funded by both Région Bretagne (Brittany region), France, and Direction Générale de l’Armement (DGA).
- We also used the code provided by the CleverHans software library to which we added further modifications in order to adapt it to the context of our study.
+ We also used the code provided by the [CleverHans software library](https://github.com/cleverhans-lab/cleverhans) to which we added further modifications in order to adapt it to the context of our study.
  ## Contact
 Hanene F.Z Brachemi Meftah , `hanene.brachemi@insa-rennes.fr`
 
