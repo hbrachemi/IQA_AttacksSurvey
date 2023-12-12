@@ -17,25 +17,6 @@ def fast_gradient_method(
     sanity_checks=False, loss_fn=torch.nn.MSELoss(),
     preprocess = None
 ):
-    """
-    PyTorch implementation of the Fast Gradient Method.
-    :param model_fn: a callable that takes an input tensor and returns predicted scores.
-    :param x: input tensor.
-    :param eps: epsilon (input variation parameter); see https://arxiv.org/abs/1412.6572.
-    :param norm: Order of the norm (mimics NumPy). Possible values: np.inf, 1 or 2.
-    :param clip_min: (optional) float. Minimum float value for adversarial example components.
-    :param clip_max: (optional) float. Maximum float value for adversarial example components.
-    :param y: Tensor with true labels. If targeted is true, then provide the
-              target label. Otherwise, only provide this parameter if you'd like to use true
-              labels when crafting adversarial samples.
-    :param targeted: (optional) bool. Is the attack targeted or untargeted?
-              Untargeted, the default, will try to make the label incorrect.
-              Targeted will instead try to move in the direction of being more like y.
-    :param sanity_checks: bool, if True, include asserts (Turn them off to use less runtime /
-              memory or for unit tests that intentionally pass strange input)
-    :param loss_fn: (optional) loss function used to compute the loss
-    :return: a tensor for the adversarial example
-    """
     if norm not in [np.inf, 1, 2]:
         raise ValueError(
             "Norm order must be either np.inf, 1, or 2, got {} instead.".format(norm)
