@@ -5,8 +5,9 @@
 2. [General Attack Outline](#General-Attack-Outline)
 3. [Examples](#Examples) 
 4. [Usage](#Usage)
-5. [Acknowledgements](#Acknowledgements)
-6. [Contact](#Contact)
+5. [Citation](#Citation)
+6. [Acknowledgements](#Acknowledgements)
+7. [Contact](#Contact)
 
 
 ## Abstract
@@ -49,6 +50,19 @@ DL-based IQA models.
 ```epsilons = [0.001,0.01,0.1]```
 ```attacks = ["bim","pgd","fgm"]```
 ```losses = ['mse(y_tielda,y)']```
+## Citation
+We kindly ask you to cite our paper if you find the repository useful to your work:
+```
+@inproceedings{meftah2023evaluating,
+  title={Evaluating the Vulnerability of Deep Learning-based Image Quality Assessment Methods to Adversarial Attacks},
+  author={Meftah, Hanene FZ Brachemi and Fezza, Sid Ahmed and Hamidouche, Wassim and D{\'e}forges, Olivier},
+  booktitle={2023 11th European Workshop on Visual Information Processing (EUVIP)},
+  pages={1--6},
+  year={2023},
+  organization={IEEE}
+}
+```
+
  ## Acknowledgements
  This project is funded by both Région Bretagne (Brittany region), France, and Direction Générale de l’Armement (DGA).
  We also used the code provided by the [CleverHans software library](https://github.com/cleverhans-lab/cleverhans) to which we added further modifications in order to adapt it to the context of our study.
